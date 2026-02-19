@@ -45,3 +45,29 @@ typechain-types
 cache
 artifacts
 
+dist/
+backend/node_modules/
+backend/dist/
+frontend/node_modules/
+backend/src/blockchain/crypto/
+backend/src/blockchain/wallet/
+backend//build
+*.log
+
+
+# Fabric generated artifacts
+blockchain/fabric-samples/
+blockchain/**/organizations/
+blockchain/**/system-genesis-block/
+blockchain/**/channel-artifacts/
+
+# ==============================
+# Docker
+# ==============================
+
+docker-data/
+*.pid
+*.seed
+
+# Go vendor
+**/vendor/

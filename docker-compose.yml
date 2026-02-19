@@ -1,0 +1,30 @@
+services:
+
+  postgres:
+    image: postgres:15
+    container_name: blockwatt-postgres
+    environment:
+      POSTGRES_DB: blockwatt
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: password
+    ports:
+      - "5433:5432"
+
+  backend:
+    build: ./backend
+    container_name: blockwatt-backend
+    ports:
+      - "3001:3000"
+    networks:
+      - default
+      - fabric_test
+
+  frontend:
+    build: ./frontend
+    container_name: blockwatt-frontend
+    ports:
+      - "3000:3000"
+
+networks:
+  fabric_test:
+    external: true
